@@ -10,6 +10,7 @@ Extrahiert Domains aus Log-Dateien.
 
  
 **Optionen:**
- - -f [DATEI]
+ - -i [DATEI] 
+ - -o Ergebnisse in [DATEI] speichern
  - -c Anzahl des Vorkommens voranstellen
  - -r Ergebnis der Sortierung umkehren
