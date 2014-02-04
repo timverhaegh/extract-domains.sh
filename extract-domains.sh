@@ -17,11 +17,12 @@ done
 
 
 cat ${fileInput} | \
- sed -e 's#.*http://##' -e 's#[[:blank:]].*##' | \
+ sed -e 's#.*http://##' -e 's#.*https://##' -e 's#[[:blank:]].*##' | \
   sed -e 's#\?##' -e 's#:[0-9][0-9]*##' -e 's#{\|\;].*##' | \
    sed -e 's#/#§#1' -e 's#§.*##' | \
     grep '\.' | \
      sed -e 's#^www\.##' | \
-      uniq ${uniq_count} | \
-       sort ${sort_reverse} \
-        > ${fileOutput}
+      sort | \
+       uniq ${uniq_count} | \
+        sort -h ${sort_reverse} \
+         > ${fileOutput}
